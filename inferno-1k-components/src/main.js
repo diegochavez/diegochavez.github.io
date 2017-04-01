@@ -18,8 +18,10 @@ class Demo extends Component {
         //console.log(e.target.value);
 		this.numPoints = e.target.value;
 	};
-	 
 
+	componentDidMount(){
+		setTimeout(()=>this.numPoints = 1000)
+	}
 
 	render() {
 		return (
@@ -29,10 +31,6 @@ class Demo extends Component {
 					# Points
 					<input type="range" min={10} max={10000} value={this.numPoints} onInput={this.updateCount} />
 					{this.numPoints}
-					<label>
-						<input type="checkbox" onChange={this.toggleAsync} />
-						Async
-					</label>
 				</div>
 				<div class="about">
                     InfernoJs Demo by <a href="https://github.com/diegochavez" target="_blank">Diego Chavez</a> Fork from 
@@ -64,7 +62,7 @@ const LAYOUT_ORDER = [
 class VizDemo extends Component {
 
 	@tracked layout = 0;
-	@tracked count = 1000;
+	@tracked count = 0;
 	@tracked phyllotaxis = genPhyllotaxis(100);
 	@tracked grid = genGrid(100);
 	@tracked wave = genWave(100);
@@ -135,7 +133,7 @@ class VizDemo extends Component {
 
 
 
-	componentDidUpdate(props) {
+	componentWillReceiveProps(props) {
 		if (props.count !== this.count) {
 			this.count = props.count;
 
