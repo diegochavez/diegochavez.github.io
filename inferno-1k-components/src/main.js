@@ -169,7 +169,6 @@ class VizDemo extends Component {
 
 
 function Point({ x, y, color }) {
-	if(parseInt(x) && parseInt(y)){
 	return (
 		<rect
 			class="point"
@@ -178,8 +177,6 @@ function Point({ x, y, color }) {
 			noNormalize
 		/>
 	);
-	}
-
 }
 const theta = Math.PI * (3 - Math.sqrt(5));
 
