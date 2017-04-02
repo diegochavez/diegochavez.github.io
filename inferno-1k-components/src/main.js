@@ -25,14 +25,14 @@ class Demo extends Component {
 
 	render() {
 		return (
-			<div class="app-wrapper">
+			<div className="app-wrapper">
 				<VizDemo count={this.numPoints} />
-				<div class="controls">
+				<div className="controls">
 					# Points
 					<input type="range" min={10} max={10000} value={this.numPoints} onInput={this.updateCount} />
 					{this.numPoints}
 				</div>
-				<div class="about">
+				<div className="about">
                     InfernoJs Demo by <a href="https://github.com/diegochavez" target="_blank">Diego Chavez</a> Fork from 
 					Demo by <a href="https://github.com/developit" target="_blank">Jason Miller</a>,
 					based on the Glimmer demo by <a href="http://mlange.io" target="_blank">Michael Lange</a>.
@@ -158,7 +158,7 @@ class VizDemo extends Component {
 
 	render() {
 		return (
-			<svg class="demo">
+			<svg className="demo">
 				<g noNormalize hasNonKeyedChildren>
 					{ map(this.points, this.renderPoint) }
 				</g>
@@ -171,7 +171,7 @@ class VizDemo extends Component {
 function Point({ x, y, color }) {
 	return (
 		<rect
-			class="point"
+			className="point"
 			transform={`translate(${x}, ${y})`}
 			fill={color}
 			noNormalize
